@@ -32,7 +32,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
         db.execSQL(query);
     }
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
+    public void onUpgrade(SQLiteDatabase db, int oldV, int newV)
     {
+        String query = "DROP TABLE IF EXISTS " + TABLE_NAME;
+        db.execSQL(query);
+        onCreate(db);
     }
 }
