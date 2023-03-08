@@ -39,7 +39,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
         db.execSQL(query);
         onCreate(db);
     }
-    public long AddPlayer(String name, int number, String club)
+    public long AddPlayer(String name, String number, String club)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
