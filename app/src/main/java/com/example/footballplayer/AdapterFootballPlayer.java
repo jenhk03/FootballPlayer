@@ -30,6 +30,9 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPlayer holder, int position)
     {
+        holder.tvName.setText(arrName.get(position).toString());
+        holder.tvNumber.setText(arrNumber.get(position).toString());
+        holder.tvClub.setText(arrClub.get(position).toString());
     }
     @Override
     public int getItemCount()
