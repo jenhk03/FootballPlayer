@@ -36,14 +36,12 @@ public class MainActivity extends AppCompatActivity
         }
         );
     }
-
     @Override
     protected void onResume()
     {
         super.onResume();
         ShowPlayer();
     }
-
     private void SQLiteToArrayList()
     {
         Cursor cursor = myDB.readDataPlayer();
