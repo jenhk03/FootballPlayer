@@ -37,7 +37,7 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
     @Override
     public int getItemCount()
     {
-        return 0;
+        return arrName.size();
     }
     public class ViewHolderPlayer extends RecyclerView.ViewHolder
     {
