@@ -2,6 +2,7 @@ package com.example.footballplayer;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
@@ -48,5 +49,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
         cv.put(FIELD_CLUB, club);
         long exec = db.insert(TABLE_NAME, null, cv);
         return exec;
+    }
+    public Cursor readDataPlayer()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor cursor = null;
+        if (db != null)
+        {
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 }
