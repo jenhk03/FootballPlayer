@@ -61,4 +61,20 @@ public class MyDatabaseHelper extends SQLiteOpenHelper
         }
         return cursor;
     }
+    public long changePlayer(String id, String name, String number, String club)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(FIELD_NAME, name);
+        cv.put(FIELD_NUMBER, number);
+        cv.put(FIELD_CLUB, club);
+        long exec = db.update(TABLE_NAME, cv, "id = ?", new String[]{id});
+        return exec;
+    }
+    public long deletePlayer(String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long exec = db.delete(TABLE_NAME, "id = ?", new String[]{id});
+        return exec;
+    }
 }
