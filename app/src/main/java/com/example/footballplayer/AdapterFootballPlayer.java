@@ -3,6 +3,7 @@ package com.example.footballplayer;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,12 @@ public class AdapterFootballPlayer extends RecyclerView.Adapter<AdapterFootballP
                         @Override
                         public void onClick(DialogInterface dialog, int which)
                         {
+                            Intent intent = new Intent(ctx, ChangeActivity.class);
+                            intent.putExtra("varID", tvID.getText().toString());
+                            intent.putExtra("varName", tvName.getText().toString());
+                            intent.putExtra("varNumber", tvNumber.getText().toString());
+                            intent.putExtra("varClub", tvClub.getText().toString());
+                            ctx.startActivity(intent);
                         }
                     }
                     );
